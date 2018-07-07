@@ -1,0 +1,58 @@
+import java.util.Scanner;
+
+public class sinifim {
+public static void main(String[] args) {
+	Scanner scan=new Scanner(System.in);
+	
+	int	a,ders1,ders2,ders3,ders4,ders5,mat,edebiyat,fen,biyo,fizik;
+	System.out.println("...Takdir Teşekkür Hesaplama..."+"\n");
+	
+	System.out.println("Matematik Ders Ortalamanızı Giriniz: ");
+	mat = scan.nextInt();
+	System.out.println("Haftalık Ders Saatini giriniz: ");
+	ders1=scan.nextInt();
+	System.out.println("Türk Dili ve Edebiyat Ders Ortalamanızı Giriniz: ");
+	edebiyat = scan.nextInt();
+	System.out.println("Haftalık Ders Saatini giriniz: ");
+	ders2=scan.nextInt();
+	System.out.println("Fen ve Teknolojileri Ders Ortalamanızı Giriniz: ");
+	fen = scan.nextInt();
+	System.out.println("Haftalık Ders Saatini giriniz: ");
+	ders3=scan.nextInt();
+	System.out.println("Biyoloji Ders Ortalamanızı Giriniz: ");
+	biyo = scan.nextInt();
+	System.out.println("Haftalık Ders Saatini giriniz: ");
+	ders4=scan.nextInt();
+	System.out.println("Fizik Ders Ortalamanızı Giriniz: ");
+	fizik = scan.nextInt();
+	System.out.println("Haftalık Ders Saatini giriniz: ");
+	ders5=scan.nextInt();
+	
+	
+	System.out.println("\n"+"...Öğrencinin Aldığı Notlar...");
+	System.out.println("Matematik: " + mat);
+	System.out.println("Türk Dili ve Edebiyat: " + edebiyat);
+	System.out.println("Fen ve Teknolojileri: " + fen);
+	System.out.println("Biyoloji: " + biyo);
+	System.out.println("Fizik: " + fizik);
+	
+	int derssaati = ders1+ders2+ders3+ders4+ders5;
+	int anotu = mat*ders1+edebiyat*ders2+fen*ders3+biyo*ders4+fizik*ders5;
+	double ort= anotu/derssaati;
+	System.out.println("\n"+ "Toplam Ders Saati: " + derssaati);
+	System.out.println("Ağırlık Notu: " + anotu);
+	System.out.println("Not Ortalaması: " + ort);
+	
+	if(ort<70)
+	{
+		System.out.println("Belge almaya hak kazanamadınız.!");
+	}
+	if(ort>=70 && ort<=89.99) {
+		System.out.println("Tebrikler.! Teşekkür Belgesi Almaya Hak Kazandınız.!");
+	}
+	if(ort>=85) {
+		System.out.println("Tebrikler.! Takdir Belgesi Almaya Hak Kazandınız.!");
+	}
+	
+}
+}
