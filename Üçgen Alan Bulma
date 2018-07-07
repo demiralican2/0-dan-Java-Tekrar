@@ -1,0 +1,13 @@
+public class JavaDeneme2 {
+public static void main(String[] args) {
+     int taban,h;
+		 
+		 System.out.println("Üçgenin taban uzunluğunu giriniz: ");
+		 taban =scan.nextInt();
+		 System.out.println("Üçgenin yüksekliğini giriniz: ");
+		 h=scan.nextInt();
+		 
+		 System.out.println("Üçgenin Alanını Bulma Formülü : taban alanı * yükseklik /2 'dir.");
+		 System.out.println("Verilerini girdiğiniz üçgenin alanı: " +taban*h/2);
+}
+}
