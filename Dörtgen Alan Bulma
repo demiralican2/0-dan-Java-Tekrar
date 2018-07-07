@@ -1,0 +1,12 @@
+public class JavaDeneme3 {
+public static void main(String[] args){
+int uzun,kısa;
+		 System.out.println("Uzun Kenarı girin: ");
+		 uzun=scan.nextInt();
+		 System.out.println("Kısa Kenarı girin: ");
+		 kısa=scan.nextInt();
+		 System.out.println("Dörgenin Alanını Bulma Formülü : KISA KENAR * UZUN KENAR'dır.");
+		 System.out.println("Verilerini girdiğiniz Dörtgenin alanı: " + uzun*kısa);
+
+}
+}
