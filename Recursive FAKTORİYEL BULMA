@@ -1,0 +1,23 @@
+package JavaDeneme8;
+
+import java.util.Scanner;
+
+public class asdasdas {
+public static void main(String[] args) { 
+	Scanner scan = new Scanner(System.in);
+	int a;
+	System.out.println("Sayı girin: ");
+	a=scan.nextInt();
+	
+	int t = hesapla(a);
+	System.out.println("Girdiğiniz Sayının Faktoriyeli: " +t);
+	}
+public static int hesapla(int b) {
+	if (b == 0) {
+	return 1;
+	}
+	else {
+		return b*hesapla(b-1);
+	}
+}
+}
