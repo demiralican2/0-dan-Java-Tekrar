@@ -1,0 +1,29 @@
+java.util.ArrayList<String> aylar =
+		            new java.util.ArrayList<String>();
+
+		        
+		 int ay = 8;
+		 switch (ay) {
+         case 1:  aylar.add("January");
+         case 2:  aylar.add("February");
+         case 3:  aylar.add("March");
+         case 4:  aylar.add("April");
+         case 5:  aylar.add("May");
+         case 6:  aylar.add("June");
+         case 7:  aylar.add("July");
+         case 8:  aylar.add("August");
+         case 9:  aylar.add("September");
+         case 10: aylar.add("October");
+         case 11: aylar.add("November");
+         case 12: aylar.add("December");
+                  break;
+         default: break;
+		
+		
+		}
+		 if (aylar.isEmpty()) {"Geçersiz Ay Numarası");
+	        } else {
+	            for (String ayismi : aylar) {
+	               System.out.println(ayismi);
+	            }
+	        }
