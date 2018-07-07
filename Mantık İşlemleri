@@ -1,0 +1,44 @@
+public class JavaDeneme5 {
+public static void main(String[] args) {
+
+
+int a,b,c,d;
+		 
+		 System.out.println("Birinci sayı giriniz: ");
+		 a =scan.nextInt();
+		 System.out.println("İkinci sayı giriniz: ");
+		 b =scan.nextInt();
+		 System.out.println("Üçüncü sayı giriniz: ");
+		 c =scan.nextInt();
+		 System.out.println("Dördüncü sayı giriniz: ");
+		 d =scan.nextInt();
+		 
+		 if(a>b && a>c && a>d)
+		 {
+			 System.out.println("En büyük sayı: " + a);
+		 }
+		 else if(b>a && b>c && b>d) {
+			 System.out.println("En büyük sayı: " + b);
+		 }
+		 else if(c>a && c>b && c>d) {
+			 System.out.println("En büyük sayı: " + c);
+		 }
+		 else if(d>a && d>b && d>c) {
+			 System.out.println("En büyük sayı: " + d);
+		 }
+		 if(a<b && a<c && a<d)
+		 {
+			 System.out.println("En küçük sayı: " + a);
+		 }
+		 else if(b<a && b<c && b<d) {
+			 System.out.println("En küçük sayı: " + b);
+		 }
+		 else if(c<a && c<b && c<d) {
+			 System.out.println("En küçük sayı: " + c);
+		 }
+		 else if(d<a && d<b && d<c) {
+			 System.out.println("En küçük sayı: " + d);
+		 }
+     
+     }
+     }
