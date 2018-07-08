@@ -1,0 +1,118 @@
+package asdasd;
+import java.util.Scanner;
+public class MethodOrnek{
+	static int temp;
+	public static void main(String[] args) {
+		Scanner scan =new Scanner(System.in);
+		//	System.out.println(5%10);
+		
+		int a,b,c;
+		
+		
+		 System.out.print("a sayısını girin: ");
+		 a = scan.nextInt();
+		 System.out.print("b sayısını girin: ");
+		 b = scan.nextInt();
+		 System.out.print("c sayısını girin: ");
+		 c = scan.nextInt();
+		 System.out.println("\n" +"a sayısı    b sayısı    c sayısı");
+		 System.out.println("   "+a+"          "+b+"           "+c+"    ");
+		 
+		 yerdegistir(a, b);
+		 kalansayi(a, b);
+		 bolme(a, b, c);
+		 int sonuc=islem(a,b);
+		 System.out.println("\n\n\n"+b + " sayısı içinde " + a + " sayısı, " + sonuc + " kez vardır.");
+		 kalan(a,b);
+		 
+	}
+	
+	 //Yer değiştirme işlemi(a her zaman büyük sayı olacak.)
+	public static void yerdegistir(int a, int b) {
+		 if(a<b)
+		 {
+			 temp = a;
+			 a = b;
+			 b = temp; 
+			 System.out.println("\n"+"a her zaman büyük sayı olacak. Yer değiştirme işlemi yapıldı.----------------------");
+			 System.out.println("a sayısı    b sayısı   ");
+			 System.out.println("   "+a+"          "+b+"        ");
+		 }
+	}
+	
+	 //Kalan sayıyı bulma
+	public static void kalansayi(int a, int b) {
+		 System.out.println("\n"+"--------- Kalan sayıyı bulma işlemi ------------");
+		 if(a%b==0) {
+			 System.out.println(a+" sayısı "+ b +" sayısına bölünebilir");
+		 }
+		 else {
+			 System.out.println(a+" sayısı "+b+" sayısına bölünemez");
+		 }
+	}
+	
+	//a ve c sayısının b sayısına bölme işlemi 
+	public static void bolme(int a, int b, int c) {
+		 System.out.println("\n"+" --------- a ve c sayısının b sayısına bölme işlemi ------------- ");
+		 if(a%b==0 && c%b==0) {
+			 System.out.println(a+" ve" + c+" sayısı "+ b +" sayısına bölünebilir");
+		 }
+		 else if (a%b!=0 && c%b!=0){
+			 System.out.println(a+" ve "+ c+ " sayısı "+b+" sayısına bölünemez");
+		 }
+		 else if(a%b==0 && c%b!=0) {
+			 System.out.println(a+" sayısı "+b+" sayısına bölünebilir "+ c+ " sayısı "+b+" sayısına bölünemez");
+		 }
+		 else if(a%b!=0 && c%b==0)
+		 {
+			 System.out.println(a+" sayısı "+b+"  sayısına bölünemez "+ c+ " sayısı "+b+" sayısına bölünebilir");
+		 }
+	}
+	public static int islem(int a, int b)
+	{
+		
+		int x[]= {a,b};
+		x=yerdegistir(x); 
+		a=x[0];
+		b=x[1];
+		
+		
+		int i=0;
+		while(true) {
+			if(a>=b) {
+				a=a-b;
+				i++;
+			}
+			else {
+				break;
+			}
+		}
+		return i;
+	}
+	
+	public static void kalan(int a, int b) {
+		
+		int x[]= {a,b};
+		x=yerdegistir(x); 
+		a=x[0];
+		b=x[1];
+		System.out.println("\n\n\n" + a + " sayısını " + b + " sayısına böldüğümüzde kalan: " + a%b);
+		
+		
+	}
+	
+	public static int[] yerdegistir(int a[]) {
+		
+		if(a[0] < a[1])
+		{
+			 temp = a[0];
+			 a[0] =a[1];
+			 a[1] = temp; 
+			 System.out.println("\n"+"a her zaman büyük sayı olacak. Yer değiştirme işlemi yapıldı.----------------------");
+			 System.out.println("a sayısı    b sayısı   ");
+			 System.out.println("   "+a[0]+"          "+a[1]+"        ");
+		}
+		
+		return a;
+	}
+}
