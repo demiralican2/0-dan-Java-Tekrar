@@ -1,0 +1,227 @@
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Okul {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		List<Personel> personeller = new ArrayList<Personel>();
+		List<Ogrenci> ogrenciler = new ArrayList<Ogrenci>();
+		List<Ders> dersler = new ArrayList<Ders>();
+		List<Egitimci> egitimciler = new ArrayList<Egitimci>();
+		
+		//Personeller---------------------------------------------
+		Personel p ;
+
+		p= new Personel();
+		p.setAd("Alican"); 
+		p.setSoyad("Demir");
+		p.setTip(false);
+		personeller.add(p);
+		
+		p= new Personel();
+		p.setAd("Ugurcan"); 
+		p.setSoyad("Demir");
+		p.setTip(false);
+		personeller.add(p);
+		
+		p= new Personel();
+		p.setAd("Musa"); 
+		p.setSoyad("Demir");
+		p.setTip(true); 
+		personeller.add(p);
+		 
+		p= new Personel();
+		p.setAd("Rüstem"); 
+		p.setSoyad("Demir");
+		p.setTip(true); 
+		personeller.add(p);
+		
+		p= new Personel();
+		p.setAd("Mustafa"); 
+		p.setSoyad("Demir");
+		p.setTip(true); 
+		personeller.add(p);
+		
+		
+		
+		//Dersler--------------------------------------------- 
+		Ders d;
+		d = new Ders();
+		d.dersadi="Matematik";
+		d.derskredisi=2;
+		d.not=50;
+		dersler.add(d);
+		
+		d = new Ders();
+		d.dersadi="Edebiyat";
+		d.derskredisi=4;
+		d.not=60;
+		dersler.add(d);
+		
+		d = new Ders();
+		d.dersadi="mÜZİK";
+		d.derskredisi=4;
+		d.not=60;
+		dersler.add(d);
+		
+		
+		//Öğrenci Ekleme
+		Ogrenci o ;
+		for(Personel xp : personeller) {
+			if(xp.tip==false) {
+				o = new Ogrenci();
+				o.p=xp; 
+				ogrenciler.add(o);
+			}  
+		}
+		
+		//Eğitimci Ekleme
+		Egitimci e ;
+		Ders dd ;
+		int i=0;
+		for(Personel xp : personeller) {
+			if(xp.tip==true) {
+				e= new Egitimci();
+				dd= new Ders();
+				e.p=xp;
+				e.d=dersler.get(i);
+				egitimciler.add(e);
+				i++;
+				i=i%dersler.size();
+			}  
+		}
+		
+
+		System.out.println("Personel Listesi :----------------------------------");
+		for(Personel xp : personeller) {
+			 System.out.println(xp.getAd() + " " + xp.getSoyad() );
+		}
+	
+		System.out.println("\nDers ve Kredi Listesi :------------------------------------");
+		for(Ders xp : dersler) {
+			 System.out.println(xp.getDersadi() + " " + xp.getDerskredisi() );
+		}
+		
+		System.out.println("\nÖgrenci Listesi :------------------------------------");
+		for(Ogrenci xp : ogrenciler) {
+			 System.out.println(xp.getP().getAd() + " " + xp.getP().getSoyad() );
+		}
+		
+		System.out.println("\nEğitimciler :------------------------------------");
+		for(Egitimci xp : egitimciler) {
+			 System.out.println("Hoca Adi :" + xp.getP().getAd() +" Soyadı :" + xp.getP().getSoyad() +" --------Verdiği Ders : " + xp.getD().getDersadi() );
+		}
+		
+	
+		
+	}
+
+}
+
+class Personel {
+
+	String ad;
+	String soyad;
+	boolean tip;
+	
+	public String getAd() {
+		return ad;
+	}
+	public void setAd(String ad) {
+		this.ad = ad;
+	}
+	public String getSoyad() {
+		return soyad;
+	}
+	public void setSoyad(String soyad) {
+		this.soyad = soyad;
+	}
+	public boolean isTip() {
+		return tip;
+	}
+	public void setTip(boolean tip) {
+		this.tip = tip;
+	}
+
+}
+
+class Ogrenci {
+
+	Personel p = new Personel();
+	Ders d = new Ders();
+	int numara;
+
+
+	public Personel getP() {
+		return p;
+	}
+	public void setP(Personel p) {
+		this.p = p;
+	}
+	public Ders getD() {
+		return d;
+	}
+	public void setD(Ders d) {
+		this.d = d;
+	}
+	public int getNumara() {
+		return numara;
+	}
+	public void setNumara(int numara) {
+		this.numara = numara;
+	}
+	
+	
+
+}
+
+class Ders {
+
+	String dersadi;
+	int derskredisi;
+	int not;
+	
+	public String getDersadi() {
+		return dersadi;
+	}
+	public void setDersadi(String dersadi) {
+		this.dersadi = dersadi;
+	}
+	public int getDerskredisi() {
+		return derskredisi;
+	}
+	public void setDerskredisi(int derskredisi) {
+		this.derskredisi = derskredisi;
+	}
+	public int getNot() {
+		return not;
+	}
+	public void setNot(int not) {
+		this.not = not;
+	}
+
+}
+
+class Egitimci {
+	Personel p = new Personel();
+	Ders d = new Ders();
+	
+	public Personel getP() {
+		return p;
+	}
+	public void setP(Personel p) {
+		this.p = p;
+	}
+	public Ders getD() {
+		return d;
+	}
+	public void setD(Ders d) {
+		this.d = d;
+	}
+	
+	
+
+}
