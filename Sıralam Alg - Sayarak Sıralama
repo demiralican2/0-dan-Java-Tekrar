@@ -1,0 +1,44 @@
+import java.util.*;// dışardan daha önce hazırlanmış kütüphanelerin sisteme dahil edilmesi
+		import java.io.*; // kendi yazmış oldugunuz kutuphanlerde buraya yazılarak kullanılabilir "impopot" dışardan al.
+		import java.awt.*; // örneğin dışardan veri alacak bir sınıf yazıyorsanız java.io.* ı kullanmak zorundasınız.
+		import java.lang.*; 
+
+public class SayarakSiralamaCounting {
+
+		public static void main (String args[])
+		throws java.io.IOException //dısardan veri girmek için gerekli...
+		{
+		BufferedReader konsol = new BufferedReader( //konsol değişkeninin dışardan veri alacak şekilde ayarlanması...
+		new InputStreamReader(System.in)); // konsol değişken adı. dışardan alınan veriler mutlaka string dir.
+
+		System.out.println("Kac sayi gireceksiniz"); //kullanıcıya mesaj
+		String giris=konsol.readLine(); // dışardan veri alma kısmı. yani klavyeden girilen veri "giris" değişkenine konsol değişkeni 
+		//vasıtasıyla her zaman giren string dir o nedenle giris değişkeni öncelikle string olarak tanımlandı.
+		Integer d= new Integer(giris);//ama istenen "giris" in sayı olmasıdır bu nedenle "giris" string degeri "d" integer değişkenine çevrildi.
+		int n=d.intValue(); // d burada net değişken değil veri tutabilen bir adres.bu sebeple int olarak n değişkeninede bunu atıyoruz.ki n yi istediğimiz şekilde sayı olarak kullanalım.
+		int sayi[]=new int[n]; // sayi[] dizisi açıyoruz.ne kadarlık dizi açıyoruz? n kadar...
+
+		for (int i=0; i<sayi.length; i++) //dongu 1 den sayi.length= dizinin max buyuklugudur. yani n e kadar
+		{
+		System.out.print((i+1)+" . Sayiyi giriniz:");//kullanıcıya mesaj
+		String giris1=konsol.readLine();// giris1 değişkenine girilen sayi aktarıldı
+		Integer a=new Integer(giris1); // tamsayıya çevirmek için ilk adım
+		sayi[i]=a.intValue(); //dizinin i inci terine(indis,index) sayı atandı
+		}
+		for (int i=0; i<sayi.length-1; i++) //dongu 1 den n-1 e kadar yani dizinin max buyuklugunun 1 eksiğine kadar dön
+		{
+		for(int j=i+1;j<sayi.length;j++) //iç dongu i+1 den başlayarak max dizi buyukluguna kadar gidiyor
+		if (sayi[j]<sayi[i]) // eger sayı dizisinin j inci elemanı sayi dizisinin i inci elemanından kucuk ise
+		{ int b=sayi[j];
+		sayi[j]=sayi[i];sayi[i]=b;} // sayı dizisinin i. ve j. değerlerini değiştiriyor.
+		} 
+		for (int i=0; i<sayi.length; i++)// diziyi yazdırıyor.
+		{ System.out.print(sayi[i] + " ");
+
+		}
+
+		
+
+	}
+
+}
