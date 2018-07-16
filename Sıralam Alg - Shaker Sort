@@ -1,0 +1,70 @@
+
+public class ShakerSallamaSort {
+	
+	
+
+	public static void main(String[] args) {
+		
+		 // declarar array de int
+        int[] miArreglo= {900,800,300,400,500,1000,700,200,900,100};
+
+        
+        // ver los elementos de miArreglo
+        System.out.println("Sıralanacak Dizi: ");
+        for (int i = 0; i < miArreglo.length; i++) {
+        	 System.out.print(miArreglo[i] + " ");
+		}
+       
+
+        
+        int[] yeniduzenleme = cocktailSort(miArreglo);//ordenar
+        
+        // ver arreglo ordenado
+        System.out.println("\n Sıralanmış Dizi: ");
+        for (int i = 0; i < yeniduzenleme.length; i++) {
+       	 System.out.print(yeniduzenleme[i] + " ");
+		}
+      
+        
+      
+	}
+	
+	public static int[] cocktailSort(int[] sayilar) 
+	{
+	      boolean degistirme = true;
+	      int i = 0;
+	      int j = sayilar.length - 1;
+	      while(i < j && degistirme) 
+	      {
+	        degistirme = false;
+	         for(int k = i; k < j; k++) 
+	         {
+	            if(sayilar[k] > sayilar[k + 1]) 
+	            {
+	               int temp = sayilar[k];
+	               sayilar[k] = sayilar[k + 1];
+	               sayilar[k + 1] = temp;
+	               degistirme = true;
+	            }
+	         }
+	        	j--;
+	         if(degistirme) 
+	         {
+	            degistirme = false;
+	            for(int k = j; k > i; k--) 
+	            {
+	               if(sayilar[k] < sayilar[k - 1]) 
+	               {
+	                  int temp = sayilar[k];
+	                  sayilar[k] = sayilar[k - 1];
+	                  sayilar[k - 1] = temp;
+	                  degistirme = true;
+	               }
+	            }
+	         }
+	         i++;
+	      }
+	      return sayilar;    
+	}
+
+}
