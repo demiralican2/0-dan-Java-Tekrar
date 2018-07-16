@@ -1,0 +1,48 @@
+import java.util.Scanner;
+
+public class SinifOrnek1 {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+
+		int a;
+		int b;
+		System.out.println("Bir sayı giriniz: ");
+		a = scan.nextInt();
+		System.out.println("Bir sayı giriniz: ");
+		b = scan.nextInt();
+
+		hesapla islem = new hesapla(); 
+		System.out.println("çarma: "+islem.carp(a, b));
+		System.out.println("toplama: "+islem.topla(a, b));
+		System.out.println("bolme: "+islem.bol(a, b));
+		System.out.println("cikar: "+islem.cikar(a, b)); 		 
+	} 
+}
+
+ class hesapla { 
+	public int carp(int a, int b) { 
+		int sonuc = a * b; 
+		return sonuc; 
+	} 
+	
+	public int topla(int a, int b) { 
+		int sonuc = a + b; 
+		return sonuc; 
+	} 
+	
+	public int bol(int a, int b) { 
+		int sonuc = a / b; 
+		return sonuc; 
+	}
+	
+	public int cikar(int a, int b) { 
+		int sonuc = a - b; 
+		return sonuc; 
+	}
+}
+ 
+ 
+ 
+ 
+
