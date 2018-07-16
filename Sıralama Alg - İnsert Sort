@@ -1,0 +1,47 @@
+
+
+public class İnsertSort {
+
+	public static void main(String[] args) {
+		
+		int dizi[]= {8,2,4,9,3,6};
+		
+		int sonuc[] = insertion(dizi);
+		
+		System.out.print("Girdi: ");
+		yaz(dizi);
+		System.out.println();
+		System.out.print("Çıktı: ");
+		yaz(sonuc);
+	}
+	public static int[] insertion(int a[])
+	{
+		int key;
+		int i;
+		System.out.println("i    j    key    a[i]");
+		for(int j=1; j<a.length; j++)
+		{
+			key = a[j];
+			i=j-1;
+			
+			System.out.println(i + "     "+ j + "     " + key+"      "+a[i]);
+			while(i>=0 && a[i]>key)
+			{
+				a[i+1]=a[i];
+				i=i-1;
+				System.out.println(i +"     "+ j + "     " + key+"      "+a[j]);
+			}
+			a[i+1]=key;
+		} 
+		return a;
+	}
+
+	public static void yaz(int y[])
+	{
+		for(int j=0; j<y.length; j++)
+		{
+			System.out.print(y[j]);
+		}
+		
+	}
+}
