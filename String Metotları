@@ -1,0 +1,161 @@
+
+public class StringMetot {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Concat Metodu : Bu metot çağırıldığı String'e paramatre alarak aldığı
+		 * String'i ekler. Yani iki String'i "BOŞLUKLAR DAHİL" birleştirir.
+		 */
+		System.out.println("_______ CONCAT METODU _______");
+		String str = "Alican";
+		str = str.concat(" DEMİR");
+		System.out.println("Ad-Soyad: " + str);
+
+		/*
+		 * Equals Metodu: Eşitlik metodudur. Çağırıldığı String ile parametrede ki
+		 * String'i kontrol ederek eşitlik durumuna bakar. Eşitse TRUE değilse FALSE
+		 * değeri döndürür.
+		 */
+
+		System.out.println("\n_______ EQUALS METODU _______");
+		String s1 = new String("Alican");
+		String s2 = new String("Alican");
+		System.out.println("1.Kelime: " + s1 + "\n2.Kelime: " + s2 + "\nbirbirine eşittir.");
+		System.out.println("Sonuc : " + (s1.equals(s2)));
+
+		/*
+		 * length() Metodu: Kendisini çağıran String'in uzunluğunu int değeri şeklinde
+		 * döndürür.
+		 */
+
+		System.out.println("\n _______ LENGTH METODU _______");
+		String Str1 = new String("Alican");
+		String Str2 = new String("DEMİR");
+
+		System.out.print(Str1 + "'in harf sayısı :");
+		System.out.println(Str1.length());
+
+		System.out.print(Str2 + "'in harf sayısı :");
+		System.out.println(Str2.length());
+
+		/*
+		 * charAt() Metodu: String ile çağırılır ve int bir parametre alır. Aldığı
+		 * parametreye göre geriye bir char değer döndürür.Parametre olarak alınan int
+		 * değer, bir indisi belirtir. Metot, bu indis değerine göre String’in ilgili
+		 * indisteki karakterini döndürür. Eğer belirtilen indis mevcut değilse, indis
+		 * bulunamadı hatası döndürür.
+		 */
+
+		System.out.println("\n _______ CharAt METODU _______");
+
+		String s = "Alican DEMİR";
+		char result = s.charAt(4);
+		System.out.println(s);
+		System.out.println("5. harf " + result);
+
+		/*
+		 * substring() Metodu: kendisini çağıran String’in belirtilen parçasını yine bir
+		 * String olarak geri döndürür. Hangi bölümünün alınacağı yine parametre olarak
+		 * verilen int’ler sayesinde bulunur.
+		 */
+		System.out.println("\n _______ SUBSTRİNG METODU ______");
+		String Str = new String("Alican DEMİR");
+		System.out.println("Kelime :" + Str);
+		System.out.print("Döndürülen değer: ");
+		System.out.println(Str.substring(6)); // Kaçıncı harften sonra ekrana yazılacağını belirtir.
+
+		/*
+		 * trim() Metodu : kendisini çağıran String’in önündeki ve sonundaki boşlukları
+		 * silip bize geri döndürür.
+		 */
+		System.out.println("\n _______ TRİM METODU _______");
+		String qd = new String("   Sağ ve solda ki boşluklar silindi.   ");
+		System.out.println(qd + "\n");
+		System.out.println("Boşluklar silindi :");
+		System.out.println(qd.trim());
+
+		/*
+		 * toUpperCase() ve toLowerCase() Metodu : kendisini çağıran String’in tüm
+		 * harflerini büyük harf veya küçük harfe çevirir. toUpperCase() büyük harfe
+		 * çevirirken, toLowerCase() küçük harfe çevirir.
+		 */
+		System.out.println("\n _______toUpporCase & toLowerCase METODU _______");
+		String qe = new String("alican demir");
+		System.out.println("Kelime: " + qe);
+		System.out.print("Büyük harflerle yazma :");
+		System.out.println(qe.toUpperCase());
+
+		String qr = new String("ALİCAN DEMİR");
+		System.out.println("Kelime: " + qr);
+		System.out.print("Küçük harflerle yazma :");
+		System.out.println(qr.toLowerCase());
+
+		System.out.println("\n _______compareTo METODU _______");
+
+		System.out.println(
+				"\nKarşılaştırma yapılırken,\n\nBüyük olan sayı yerine : -1 \nEşit olan sayı yerine : 0\nKüçük olan sayı yerine : 1\nyazılır.\n");
+		Integer x = 5;
+		System.out.println("Tutulan Sayı :" + x);
+		System.out.println("5<8 olduğu için :" + x.compareTo(8));
+		System.out.println("5=5 olduğu için :" + x.compareTo(5));
+		System.out.println("5>3 olduğu için :" + x.compareTo(3));
+
+		/*
+		 * indexOf Metodu : Stringimizin içerisindeki herhangi bir karakterin hangi
+		 * sırada olduğunu döndürür. Ancak Java sıfırdan saymaya başlar.
+		 */
+		System.out.println("\n _______indexOf METODU _______");
+		String qy = "Java Programlama";
+		System.out.println("a harfi ilk olarak : " + qy.indexOf('a') + " sırada bulundu");
+		System.out.println("a harfi 2. indexden sonra " + qy.indexOf('a', 2) + " sırada bulundu");
+		System.out.println("gram altstringi " + qy.indexOf("gram") + " sırada bulundu");
+
+		/*
+		 * Replace Metodu: Metodu uygulandığı string içerisinde karakter yada karakter
+		 * gruplarının değiştirmeyi sağlar.
+		 */
+		System.out.println("\n _______Replace METODU _______");
+		String qw = "Bu bir Matematik Yazısıdır";
+		System.out.println(qw.replace("Yazısıdır", "İşlemidir"));
+
+		/*
+		 * Contains Metodu: Bir string içerisinde arama işlemi yapmamızı sağlar.
+		 */
+		System.out.println("\n _______Contains METODU _______");
+		String qq = "Bu Bir String Yazısıdır.";
+		System.out.println(qq.contains("String") + "\n" + qq.contains("metin"));
+
+					
+		System.out.println("\n--------SAYISAL VERİLERİN STRİNGLERE ÇEVRİLMESİ-------");
+		System.out.println();
+		String q = "String yapıldı :" + 5;
+		System.out.println(q);
+										// valueOf() Kullanımı
+		System.out.println("\n______valueOf Kullanımı______");
+		float fl = (float) 5.2;
+		String Q = String.valueOf(fl);
+		System.out.println("\t"+Q);
+		
+		
+										// toString() Kullanımı
+		System.out.println("\n______toString Kullanımı______");
+		int a = 5;
+		double b = 5.3; 
+		String T1 = Integer.toString(a);
+		String T2 = Double.toString(b);
+		System.out.println("\t"+T1 + " " + T2);
+		
+			// 
+		System.out.println("\n--------STRİNGLERİN SAYISAL DEĞERLERE ÇEVRİLMESİ-------");
+		System.out.println("\n______parse Kullanımı______");
+		String skel = "5";
+		String skel2 = "4.3";
+		
+		int p = Integer.parseInt(skel);
+		double o = Double.parseDouble(skel2);
+		System.out.println("\t"+p + " " + o);
+		System.out.println("\t"+p + o);
+		
+	}
+}
